@@ -1,0 +1,29 @@
+<!-- 지시어 -->
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+    
+<!-- 스크립트 요소(선언부) -->
+<%!
+	String str1 = "안녕하세요.";
+	String str2 = "라이언";
+	String str3 = "JSP";
+%>
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Hello JSP</title>
+</head>
+<body>
+<!-- 스크립트 요소(표현식) -->
+	<h1>처음 만들어보는 <%= str3 %> 프로젝트</h1>
+	<p>
+<!-- 스크립트 요소(스크립트릿) -->
+<% 
+	out.println(str1 + str2+ "입니다. 열공합시다.");
+%>
+	</p>
+
+</body>
+</html>
