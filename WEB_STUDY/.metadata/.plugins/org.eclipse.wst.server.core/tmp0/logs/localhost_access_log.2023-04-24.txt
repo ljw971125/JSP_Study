@@ -1,0 +1,8 @@
+127.0.0.1 - - [24/Apr/2023:10:36:20 +0900] "GET / HTTP/1.1" 404 807
+0:0:0:0:0:0:0:1 - - [24/Apr/2023:10:36:23 +0900] "GET /Final_Project/05JDBC/ConnectionTest.jsp HTTP/1.1" 200 223
+0:0:0:0:0:0:0:1 - - [24/Apr/2023:10:47:58 +0900] "GET /Final_Project/05JDBC/ExeQuery.jsp HTTP/1.1" 200 176
+0:0:0:0:0:0:0:1 - - [24/Apr/2023:10:47:58 +0900] "GET /favicon.ico HTTP/1.1" 404 818
+0:0:0:0:0:0:0:1 - - [24/Apr/2023:11:03:48 +0900] "GET /Final_Project/05JDBC/ExeUpdate.jsp HTTP/1.1" 200 165
+0:0:0:0:0:0:0:1 - - [24/Apr/2023:11:03:48 +0900] "GET /favicon.ico HTTP/1.1" 404 818
+0:0:0:0:0:0:0:1 - - [24/Apr/2023:11:04:06 +0900] "GET /Final_Project/05JDBC/ExeQuery.jsp HTTP/1.1" 200 221
+0:0:0:0:0:0:0:1 - - [24/Apr/2023:11:04:06 +0900] "GET /favicon.ico HTTP/1.1" 404 818

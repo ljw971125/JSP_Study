@@ -40,3 +40,13 @@
 4월 21, 2023 10:25:17.808 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
 4월 21, 2023 11:18:06.716 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
 4월 21, 2023 12:05:30.775 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+
+4월 24, 2023 09:46:53.855 NEW SESSION
+4월 24, 2023 09:46:53.855 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+4월 24, 2023 09:47:18.470 [13140:4888:0424/094718.469:ERROR:usb_descriptors.cc(114)] Failed to parse configuration descriptor.
+4월 24, 2023 09:47:18.585 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+4월 24, 2023 10:05:19.781 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+4월 24, 2023 10:30:57.744 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+4월 24, 2023 10:48:00.547 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+4월 24, 2023 11:03:51.69 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+4월 24, 2023 11:04:08.181 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
