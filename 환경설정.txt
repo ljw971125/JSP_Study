@@ -1,0 +1,102 @@
+JDK
+  [환경 변수]
+  시스템 변수 -> 새로 만들기
+  변수 이름: JAVA_HOME
+  변수 값: C:\Develop_Kits\jdk-11
+
+  시스템 변수 -> PATH -> %JAVA_HOME%\bin
+
+  버전 확인: cmd실행 -> javac -version
+                      java -version
+
+APACHE_TOMCAT
+
+Eclipse
+  처음 실행시 Use this as default do not ask again(클릭금지)
+  Browse -> C:\WEB_STUDY(생성) -> 선택 후 Launch
+
+  글자 깨짐 방지
+  Window -> Preferences -> General -> Workspace -> Text file encoding -> Other -> UTF-8
+  Web -> CSS Files -> Encoding -> ISO 10646/Unicode(UTF-8)
+  Web -> HTML Files -> Encoding -> ISO 10646/Unicode(UTF-8)
+  Web -> JSP Files -> Encoding -> ISO 10646/Unicode(UTF-8)
+
+  이클립스 오른쪽 위에(커피콩 같은 모양) JAVA EE가 체크가 안되있으면 체크
+
+  콘솔창 위치에서 Servers 클릭 -> No serverrs are available. Click this link to create a new server... 클릭
+  -> Apache 클릭 -> Tomcat v9.0 Server 선택 -> JRE 선택창에서 jdk-11 선택 -> Browse 클릭 -> apache tomcat이 있는 경로 선택
+  -> 폴더 선택 후 Finish -> Servers에 Tomcat이 생겼는지 확인
+
+  서버 실행 확인
+  Servers 있는 위치에서 오른쪽에 초록색 재생 버튼 클릭 -> 방화벽 허용 -> 인터넷 브라우저에서 주소창에 http://localhost:8080 입력
+  ->HTTP 상태 404 - 찾을 수 없음 페이지가 뜨면 성공 
+
+  프로젝트 생성
+  왼쪽 상단에 File 클릭 -> New -> Dynamic Web Project클릭 -> Dynamic web module version에서 4.0 선택 
+  -> Next(Web Module창 나올때까지) -> Generate web.xml deployment descriptor 체크 -> Finish
+
+  왼쪽메뉴
+  Final_Project 프로젝트 이름
+  Java Resources 자바(Server) 소스 파일
+  WebContent JSP 소스 파일 (ex:naver.com)
+  Servers 톰캣 서버
+
+  Html 만들기 -> WebContent 우클릭 -> New -> JSP File클릭 -> 이름 지정후 Finish
+
+  Font 변경
+  Window -> Preferences -> General -> Appearance -> Basic -> Text Font
+
+★면접 예상
+[웹 개발]
+  1. 사용자 변수 vs 시스템 변수
+  2. 서버 vs 클라이언트
+  3. WAS(Web Application Server)
+  4. 4xx 에러(404)
+  5. 서버 / 웹서버/ 웹 컨테이너
+  6. 500 에러
+  7. URL VS URI
+
+서버(server)
+  웹에서 서비스를 제공하는 컴퓨터 시스템을 말합니다.
+
+웹 서버(Web Server)
+  사용자로부터 HTTP를 통해 요청을 받거나, 웹 컨테이너가 전달해준 결과물을 정적 페이지로 생성하여
+  사용자에게 응답해주는 소프트웨어를 말합니다.
+
+웹 컨테이너(Web Container)
+  웹 서버가 전송해준 요청을 기초로 동적인 페이지를 생성하여 웹 서버로 돌려줍니다.
+
+WAS(Web Application Server)
+  웹 애플리케이션이 실행될 수 있는 환경을 제공하는 소프트웨어로,
+  컴퓨터에서 운영체제와 비슷한 역할을 하는 소프트웨어라 할 수 있습니다.
+
+HTTP(HyperText Transfer Procotol) / HTTPS(HTTP Secure)
+  보통 www라고 줄여서 쓰는 월드 와이드 웹(world wide web)에서
+  웹 서버와 사용자 사이의 통신을 위해 사용하는 통신 프로토콜 입니다.
+
+프로토콜(Protocol)
+  네트워크를 통해 컴퓨터들이 정보를 주고받는 절차 혹은 통신 규약을 말합니다.
+  예)HTTP, FTP, SMTP 등
+
+포트(Port)
+  포트를 직역하면 '항구'라는 뜻인데, 컴퓨터 사이에서 데이터를 주고 받을 수 있는 통로를 말합니다.
+  예) HTTP: 80번 포트 / HTTPS: 443번 포트
+
+JSP(Java Server Pages)
+동적인 웹 페이지를 개발하기 위한 웹 프로그래밍 기술입니다.
+
+JSP
+HTML 코드 안에서 필요한 부분만 자바 코드를 스크립트 형태로 추가합니다.
+자주 쓰이는 기능을 내장 객체로 제공하여 즉시 사용할 수 있습니다.
+처리된 결과를 보여주는 뷰(View)를 만들 때 사용합니다.
+
+Servlet
+자바 코드 안에서 전체 HTML 페이지를 생성합니다.
+변수 선언 및 초기화가 반드시 선행되어야 합니다.
+컨트롤러(Controller)를 만들 때 사용합니다.
+
+Model2 기반의 웹 개발(JSP&Servlet)
+web.xml
+  웹 애플리케이션의 환경설정 정보를 담은 파일입니다.
+  WAS가 처음 구동될 때 이 파일을 읽어 설정 내용을 톰캣에
+  적용하게 됩니다.
