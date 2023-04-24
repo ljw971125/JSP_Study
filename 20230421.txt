@@ -1,0 +1,13 @@
+    request.getRequestDispatcher("포워드할 파일 경로")  
+        .forward(request, response);
+
+$.ajax({ 비동기로 요청을 보냅니다.
+            url : './PopupCookie.jsp', //PopupCookie.jsp 파일에 
+            type : 'get', //HTTP GET 방식으로
+            data : {inactiveToday : chkVal}, //inactiveToday : chkVal데이터를
+            dataType : "text", //응답 데이터의 타입은 일반 텍스트이며
+            success : function(resData) { //요청 성공 시
+                if (resData != '') //응답 데이터가 있다면
+                    location.reload(); // 페이지를 새로 고칩니다.
+            }
+        });
