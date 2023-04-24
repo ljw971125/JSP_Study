@@ -1,0 +1,38 @@
+JDBC : Java DataBase Connective
+자바로 데이터 베이스 연결 빛 관련 작업을 할 때 사용하는 API입니다.
+
+API(Application Programming interface)
+프로그램들이 서로 상호작용하는 것을 도와주는 매개체입니다.
+
+
+                호스트명(or IP Address)   
+"jdbc:oracle:thin:@localhost:1521:xe"
+  오라클 프로토콜          포트번호:SID
+
+커넥션풀(Connection Pool)
+Connection 객체를 미리 생성해 풀(Pool)에 넣고 요청이 있을 때 이미 생성된 Connection 객체를 가져다 사용하는 기법입니다.
+
+JND(Java Naming and Directory Interface)
+자바 소프트웨어에서 객체나 데이터를 전체 경로를 몰라도 이름만으로 찾아쓸 수 있는 디렉토리 서비스입니다.
+
+JDBC에서 쿼리문은 java.sql.Statement 인터페이스로 표현되며, Statement 객체는 Connection 객체를 통해 얻어오도록 되어있습니다.
+
+인파라미터(IN parameter)는 미리 작성해둔 쿼리문에서 일부 값을 나중에 결정할 수 있도록 해주는 매개변수입니다.
+
+Statement: 인파라미터가 없는 정적 쿼리를 처리할 때 사용
+
+PreparedStatement: 인파라미터가 있는 동적 쿼리를 처리할 때 사용
+
+Statement 계열의 객체로 쿼리문을 실행할 때 사용하는 메서드
+execyteUpdate() : INSERT, UPDATE, DELETE 쿼리문을 실행할 때 사용합니다.
+기존의 레코드를 변화시키거나 새로운 레코드를 입력하는 쿼리문들 입니다.
+따라서 실행 후 영향을 받는 행의 개수가 int형으로 반환됩니다.
+
+executeQuery(): SELECT 쿼리문을 실행할 때 사용합니다.
+SELECT는 기존 레코드를 조회하는 쿼리문입니다.
+조회한 레코드들의 집합인 ResultSet객체를
+
+                1    2    3      4
+최초 커서 위치   id   pass name   regdate
+rs.next()       ryan 1234 라이언 2023-04-24
+rs.next()       test1 1111 테스트1회원 2023-04-24
