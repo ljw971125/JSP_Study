@@ -11,7 +11,7 @@
     <form action="./ResponseLogi
     n.jsp" method="post">
         아이디 : <input type="text" name="user_id" /><br />
-        패스워드 : <input type="text" name="user_pwd" /><br />
+        패스워드 : <input type="password" name="user_pwd" /><br />
         <input type="submit" value="로그인" />
     </form>
 

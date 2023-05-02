@@ -1,0 +1,188 @@
+표현언어(Expression Lanquage)
+변수의 값을 출력할 때 사용하는 스크립트 언어입니다.
+${속성}
+
+JSP 내장 객체의 영역에 담긴 속성을 사용할 수 있습니다.
+산술 연산, 비교 연산, 논리 연산이 가능합니다.
+자바 클래스에 정의된 메서드를 호출할 수 있습니다.
+표현 언어만의 객체를 통해 JSP와 동일한 기능을 수행할 수 있습니다.
+
+비교연산자              논리 연산자             empty 연산자
+
+>  gt                &&  또는 and             값이 없을 때
+<  lt                ||  또는 or              True를 반환하는
+>= ge                !   또는 not             연산자
+<= le
+== eq                                         null
+!= ne                                         빈 문자열
+                                              길이가 0인 배열
+                                              size가 0인 컬렉션
+
+JSTL
+JSTL(Jsp Standard Tag Library)은 JSP에서 빈번하게 사용되는
+조건문, 반복문 등을 처리해주는 태그를 모아 표준으로 만들어 놓은
+라이브러리입니다.
+
+태그 종류
+Core 태그 : 변수 선언, 조건문/반복문 URL처리   접두어 : c
+Formatting 태그 : 숫자, 날짜, 시간 포멧 지정   접두어 : fmt
+XML 태그 : XML 파싱                           접두어 : x
+Function 태그 : 컬렉션, 문자열 처리            접두어 : fn
+SQL 태그 : 데이터베이스 연결 및 쿼리 실행       접두어 : sql
+
+Core 태그
+
+set : EL에서 사용할 변수를 설정합니다.
+remove : 설정한 변수를 제거합니다.
+if : 단일 조건문을 주로 처리합니다.
+choose : 다중 조건을 처리할 때 사용합니다.
+forEach : 반복문을 처리할 때 사용합니다.
+forTokens : 구분자로 분리된 각각의 토큰을 처리할 때 사용합니다.
+import : 외부 페이지를 삽입할 때 사용합니다.
+redirect : 지정한 경로로 이동합니다.
+url : 경로를 설정할 때 사용합니다.
+out : 내용을 출력할 때 사용합니다.
+catch : 예외처리에 사용합니다.
+
+Set 태그
+
+var : 변수명을 설정합니다.
+value : 변수에 할당할 값입니다.
+Scope : 변수를 생성할 영역을 지정합니다. Page가 기본값입니다.
+Target : 자바빈즈를 설정합니다.
+property : 자바빈즈의 속성, 즉 멤버 변수의 값을 지정합니다.
+
+remove 태그의 속성들
+
+var : 삭제할 변수명을 설정합니다.
+scope : 삭제할 변수의 영역을 지정합니다. 지정하지 않으면 모든 영역의 변수가 삭제됩니다.
+
+if 태그의 속성들
+test : if문에서 사용할 조건을 지정합니다.
+var : 조건의 결과를 지정할 변수명을 지정합니다.
+scope : 변수가 지정될 영역을 지정합니다.
+
+choose 태그
+
+<cchoose>
+    <cwhen test = "조건1"> 조건1을 만족하는 경우</c:when>
+    <cwhen test = "조건2"> 조건2을 만족하는 경우</c:when>
+    <c:otherwise> = 아무 조건도 만족하지 않는 경우</c:otherwise>
+<cchoose>
+
+forEach 태그의 속성들
+
+var : 변수명을 지정합니다.
+items : 반복을 위한 객체를 지정합니다. 배열, 컬렉션 등을 지정할 수 있습니다.
+begin : 시작값을 지정합니다.
+end : 종료값을 지정합니다.
+step : 증가할 값을 지정합니다.
+varStatus : 루프의 현재 상태를 알려주는 변수의 이름을 지정합니다.
+
+토큰(token)
+일반적으로 토큰은 '문법적으로 의미있는 최소 단위'를 말합니다.
+여기서는 문자열을 구분할 구분자로 분리되는 문자열의 구성 요소를 의미합니다.
+
+예) 전화번호 : 010-1111-2222 -> 010, 1111, 2222
+
+<c:forTokens items="문자열" delims="구분자" var="변수명"/>
+
+import 태그
+<c:import url="페이지 경로" scope="영역" />
+<c:import url="페이지 경로" var="변수명"scope="영역" />
+${변수명}
+
+<c:import url="페이지 경로 또는 URL?매개변수1=값1">
+    <c:param name="매개변수2" value="값2"/>
+<c:import>
+
+redirect 태그
+<c:redirect url="이동할 페이지 경로" />
+
+url 태그
+<c:url value="설정한 경로" scope="영역" />
+
+<c:url value="설정한 경로" scope="영역" var="변수명" />
+${변수명}
+
+out 태그의 속성들
+
+value : 출력할 변수를 지정합니다.
+escapeXml : 특수 문자를 변환할지 여부를 결정합니다. 기본값은 true로 특수 기호를
+            그대로 출력합니다.
+default : value 속성에 값을 지정하지 않을 경우 출력할 값을 지정합니다.
+
+catch 태그의 속성들
+
+<c:catch var = "변수명">
+    실행코드
+</c:catch>
+
+국제화(Formatting) 태그를
+
+숫자포멧
+formatNumber : 숫자 포멧을 설정합니다.
+parseNumber : 문자열을 숫자 포멧으로 변환합니다.
+
+날짜포멧
+formatDate : 날짜나 시간의 포멧을 설정합니다.
+parseDate : 문자열을 날짜 포멧으로 변환합니다.
+
+타임존 설정
+setTimeZone : 시간대 설정 정보를 변수에 저장합니다.
+TimeZone : 시간대를 설정합니다.
+
+로케일 설정
+setLocale : 통화 기호나 시간대를 설정한 지역에 맞게 표시합니다.
+requestEncoding : 요청 매개변수의 문자셋을 설정합니다.
+
+formatNumber 태그의 속성들
+value : 출력할 숫자를 설정합니다.
+type : 출력 양식을 설정합니다.
+        percent(퍼센트), currency(통화), number(일반 숫자, 기본값) 등을 지원합니다.
+var : 출력할 숫자를 변수에 저장합니다. 해당 속성 사용시 즉시 출력되지 않고,
+      원하는 위치에 출력할 수 있습니다.
+groupingUsed : 세 자리마다 콤마를 출력할지 여부를 결정합니다.
+               기본값은 true 입니다.
+pattern : 출력할 숫자의 양식을 패턴으로 지정합니다.
+
+parseNumber태그의 속성들
+
+value : 변환할 문자열을 설정합니다.
+type : 문자열의 타입을 설정합니다. 기본값은 number(숫자)입니다.
+var : 출력할 값을 변수에 저장합니다.
+pattern : 문자열의 양식을 패턴으로 지정합니다.
+scope : 변수를 저장할 영역을 지정합니다.
+integerOnly : 정수 부분만 표시할지 여부를 결정합니다. 기본값은 false입니다.
+
+formatDate 태그의 속성들
+
+value : 출력할 값을 설정합니다.
+type : 출력시 날짜(date), 시간(time), 날짜 및 시간(both) 세 가지 중 선택할 수 있습니다.
+var : 출력할 숫자를 변수에 저장합니다.
+dateStyle : 날짜 스타일을 지정합니다.
+            default, short, medium, long, full 중 선택할 수 있습니다.
+timeStyle : 시간 스타일을 지정합니다.
+            default, short, medium, long, full 중 선택할 수 있습니다.
+pattern : 출력할 날짜 및 시간의 양식을 패턴으로 지정합니다.
+scope : 변수를 저장할 영역을 지정합니다.
+
+XML 태그
+
+XML 태그는 XML 문서의 요소에 접근하기 위해 Xpath를 사용합니다.
+XPath는 XML 문서의 노드를 식별하고 탐색하는 역할을 합니다.
+
+파싱(parsing)
+
+구분 분석은 주어진 데이터를 분석하여 원하는 데이터를 특정 패턴이나
+순서로 추출해 가공하는 것을 말합니다.
+XML이나 HTML 등으로 구성된 데이터를 분석하여 내가 원하는 부분만
+추출하는 것입니다.
+
+XML 태그의 속성들
+out : select 속성에 지정한 XPath 표현식의 결과를 출력합니다.
+parse : XML을 파싱할 때 사용합니다.
+forEach : select 속성에 지정한 반복되는 노드를 파싱합니다.
+if : select 속성에 지정한 XPath 표현식의 값을 하나의 조건으로 결정합니다.
+choose : select 속성에 지정한 XPath 표현식의 값을 다중 조건으로 결정합니다.
+        하위에 when, otherwisee 태그를 사용합니다.
