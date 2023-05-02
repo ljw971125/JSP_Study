@@ -55,6 +55,7 @@ Eclipse
   5. 서버 / 웹서버/ 웹 컨테이너
   6. 500 에러
   7. URL VS URI
+  8. attribute VS property
 
 서버(server)
   웹에서 서비스를 제공하는 컴퓨터 시스템을 말합니다.
