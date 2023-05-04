@@ -22,7 +22,7 @@
         <input type="radio" name="sex" value="woman" checked="checked" />여자
         <br />
         관심사항 :
-        <input type="checkbox" name="favo" value="eco" />경제
+        <input type="checkbox" name="favo" value="경제" />경제
         <input type="checkbox" name="favo" value="pol" checked="checked" />정치
         <input type="checkbox" name="favo" value="ent" />연예<br />
         자기소개:
